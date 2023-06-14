@@ -1,0 +1,275 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    background-color: #F2f2f2;
+}
+
+button {
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+main {
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: 70px 0 24px;
+    font-family: 'Montserrat';
+    font-weight: 500;
+    color: #4F4F4F;
+}
+
+.wrapper {
+    background-color: white;
+    border-radius: 12px;
+    padding: 22px;
+    margin-bottom: 42px;
+}
+
+.personal-details {
+    display: flex;
+    gap: 34px;
+
+    >div {
+        flex-grow: 1;
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 40px;
+
+        >div h1 {
+            font-weight: 600;
+            font-size: 24px;
+            margin-bottom: 6px;
+        }
+
+        >div h2 {
+            font-size: 18px;
+            color: #828282;
+        }
+
+        .details {
+            font-size: 18px;
+
+            >div:first-child {
+                margin-bottom: 10px;
+            }
+
+            >div {
+                display: flex;
+                align-items: center;
+                gap: 18px;
+
+                .material-symbols-outlined {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+
+    .description {
+        font-size: 18px;
+        color: #828282;
+    }
+}
+
+.personal-details img {
+    width: 270px;
+    height: 270px;
+    border-radius: 12px;
+}
+
+.grid-wrapper {
+    display: grid;
+    grid-template-columns: 7fr 10fr;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.section-title {
+    font-size: 18px;
+    margin-bottom: 16px;
+    font-weight: 700;
+}
+
+.skill {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .progress {
+        background: #C4C4C4;
+        border-radius: 12px;
+        width: 240px;
+        height: 10px;
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 90%;
+            height: 100%;
+            border-radius: 12px;
+            background-color: #2F80ED;
+        }
+    }
+
+    +.skill {
+        margin-top: 16px;
+    }
+
+    &.w-80 {
+        .progress::after {
+            width: 80%;
+        }
+    }
+}
+
+.certificate {
+    >img {
+        width: 100%;
+        height: 140px;
+        border-radius: 12px;
+        margin-bottom: 26px;
+        object-fit: cover;
+    }
+
+    >h4 {
+        font-weight: 600;
+        font-size: 18px;
+
+        margin-bottom: 10px;
+        color: #333333;
+    }
+
+    >p {
+        color: #828282;
+    }
+
+    +.certificate {
+        margin-top: 36px;
+    }
+}
+
+.tags {
+    display: flex;
+    gap: 16px;
+
+    >button {
+        padding: 8px 22px;
+        font-family: 'Montserrat';
+        font-weight: 500;
+        font-size: 14px;
+        background-color: transparent;
+        color: #4F4F4F;
+        border: 1px solid #4F4F4F;
+        border-radius: 12px;
+
+        &.clicked {
+            background: #2F80ED;
+            border: 1px solid #2F80ED;
+            color: white;
+        }
+    }
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 135px;
+
+    .project {
+        padding: 18px 18px 32px;
+        background-color: white;
+        border-radius: 12px;
+
+        >img {
+            width: 100%;
+            border-radius: 12px;
+            margin-bottom: 24px;
+        }
+
+        .hashtags {
+            color: #4F4F4F;
+            margin-bottom: 22px;
+        }
+
+        >h4 {
+            font-weight: 500;
+            font-size: 24px;
+            margin-bottom: 18px;
+            color: #333333;
+        }
+
+        >p {
+            color: #828282;
+            margin-bottom: 41px;
+        }
+
+        .links {
+            >a {
+                padding: 12px 40px;
+                text-decoration: none;
+                font-size: 18px;
+                border-radius: 12px;
+
+                &:first-child {
+                    background-color: #2F80ED;
+                    margin-right: 12px;
+                    color: white;
+                }
+
+                &:nth-child(2) {
+                    border: 1px solid #2F80ED;
+                    color: #2F80ED;
+                }
+            }
+        }
+    }
+}
+
+.footer {
+    font-size: 14px;
+
+    text-align: center;
+
+    color: #828282;
+}
+
+@media screen and (max-width: 1024px) {
+    main {
+        padding: 24px;
+    }
+
+    .personal-details {
+        flex-direction: column;
+
+        .header {
+            flex-direction: column;
+            gap: 16px;
+        }
+    }
+
+    .grid-wrapper {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .projects {
+        grid-template-columns: 1fr;
+    }
+}
